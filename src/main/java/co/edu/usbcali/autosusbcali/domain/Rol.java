@@ -10,18 +10,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
-    @Column(name = "nombre", length = 50, nullable = false)
+    @Column(name = "nombre", length = 50, nullable = false, unique = true)
     private String nombre;
 
     @Column(name = "descripcion")
     private String descripcion;
 
     @Column(name = "activo", nullable = false)
-    private boolean activo;
+    private Boolean activo;
 }
